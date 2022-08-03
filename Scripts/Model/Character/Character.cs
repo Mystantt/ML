@@ -1,11 +1,19 @@
+using UnityEngine;
+using System;
 
-public abstract class Character{
+/* Class of all characters in the game
+*   Date : 03/08/2022
+*   Author : DOMPEY Fabien
+*   Version : 1.0.0
+*/
+[Serializable]
+public abstract class Character : ScriptableObject{
 
-    private String _name;
-    private String _description;
+    [SerializeField] private string _name;
+    [TextArea] private string _description;
 
-    public String Name{ get => _name; }
-    public String Description{ get => _description, set=> _description = value;}
+    public string Name{ get => _name; }
+    public string Description{ get => _description, set => _description = value;}
 
     public Character(string name,string description){
         _name = name;
