@@ -1,6 +1,11 @@
 using UnityEngine;
 using System;
 
+/* Class which represents every possible character Mobs + Hero that we can fight in the game
+* Date : 04/08/2022
+* Version : 1.0.0
+* Author : DOMPEY Fabien
+*/
 [Serializable]
 public abstract class FightableCharacter : Character{
 
