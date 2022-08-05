@@ -4,5 +4,6 @@ enum Rarity : double{
     EPIC = 0.1,
     HISTORIC = 0.05,
     LEGENDARY = 0.035,
-    ARTIFACT = 0.015
+    ARTIFACT = 0.015,
+    QUEST = 0
 }
