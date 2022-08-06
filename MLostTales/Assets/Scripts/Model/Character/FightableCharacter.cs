@@ -21,64 +21,64 @@ public abstract class FightableCharacter : Character{
     public FightableCharacter(string name,string desc,int maxhp,int maxen,IStats stats) : base(name,desc){
         _maxEnergy = maxen;
         _maxHealth = maxhp;
-        _stats = stats.createStats();
+        _stats = stats.CreateStats();
         _currentEnergy = _maxEnergy;
         _currentHP = _maxHealth;
     }
 
     ///Access to stats usable in game
     
-    public virtual double getMovementSpeed(){
-        return _stats.getMovementSpeed();
+    public virtual double GetMovementSpeed(){
+        return _stats.GetMovementSpeed();
     }
     
-    public virtual double getAttackSpeed(){
-        return _stats.getAttackSpeed();
+    public virtual double GetAttackSpeed(){
+        return _stats.GetAttackSpeed();
     }
 
-    public virtual int getPhysicalDamages(){
-        return _stats.getPhysicalDamages();
+    public virtual int GetPhysicalDamages(){
+        return _stats.GetPhysicalDamages();
     }
 
-    public virtual int getSpecialDamages(){
-        return _stats.getSpecialDamages();
+    public virtual int GetSpecialDamages(){
+        return _stats.GetSpecialDamages();
     }
 
-    public virtual int getCarryingCapacity(){
-        return _stats.getCarryingCapacity();
+    public virtual int GetCarryingCapacity(){
+        return _stats.GetCarryingCapacity();
     }
 
     //Heal energy and health of the character to the max
-    public void replenishAll(){
-        energizeFull();
-        revitalizeFull();
+    public void ReplenishAll(){
+        EnergizeFull();
+        RevitalizeFull();
     }
 
     //Heal the character fully
-    public void revitalizeFull(){
+    public void RevitalizeFull(){
         _currentHP = _maxHealth;
     }
 
     //Gives full energy to the character
-    public void energizeFull(){
+    public void EnergizeFull(){
         _currentEnergy = _maxEnergy;
     }
 
     //Health management
 
     /// <param> mod, Positive modifier used for healing </param>
-    public void heal(int mod){
-        changeHealth(mod);
+    public void Heal(int mod){
+        ChangeHealth(mod);
     }
     /// <param> mod, Positive modifier used for damages </param>
-    public void takeDamages(int mod){
-        changeHealth(-mod);
+    public void TakeDamages(int mod){
+        ChangeHealth(-mod);
     }
-    private void changeHealth(int mod){
+    private void ChangeHealth(int mod){
         if(_currentHP+mod < 0){
-            _currentHP = 0
+            _currentHP = 0;
         }else if(_currentHP+mod > _maxHealth){
-            revitalizeFull();
+            RevitalizeFull();
         }else{
             _currentHP += mod;
         }
@@ -86,18 +86,18 @@ public abstract class FightableCharacter : Character{
     //Energy management
 
     /// <param> mod, Positive modifier used for replenishing this amount of energy </param>
-    public void energize(int mod){
-        changeEnergy(mod);
+    public void Energize(int mod){
+        ChangeEnergy(mod);
     }
     /// <param> mod, Positive modifier used for amount of energy used </param>
-    public void useEnergy(int mod){
-        changeEnergy(-mod);
+    public void UseEnergy(int mod){
+        ChangeEnergy(-mod);
     }
-    private void changeEnergy(int mod){
+    private void ChangeEnergy(int mod){
         if(_currentEnergy+mod < 0){
-            _currentEnergy = 0
+            _currentEnergy = 0;
         }else if(_currentEnergy+mod > _maxEnergy){
-            energizeFull();
+            EnergizeFull();
         }else{
             _currentEnergy += mod;
         }

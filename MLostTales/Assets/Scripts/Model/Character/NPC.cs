@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using System.Collections.Generic;
 
 /* Class which represents every NPC in the game linked or not to some quests
 * Date : 03/08/2022
@@ -14,12 +15,12 @@ public class NPC : Character{
     private int _currentStep = 0;
 
     //Tells the NPC he must now get to the next dialog (see Quest system)
-    public void nextStep(){
+    public void NextStep(){
         _currentStep++;
     }
 
     //Gets current dialog of the NPC
-    public string getCurrentDialog(){
+    public string GetCurrentDialog(){
         return _dialogs[_currentStep];
     }
 

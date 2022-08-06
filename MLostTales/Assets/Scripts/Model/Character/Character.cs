@@ -13,7 +13,7 @@ public abstract class Character : ScriptableObject{
     [TextArea] private string _description;
 
     public string Name{ get => _name; }
-    public string Description{ get => _description, set => _description = value;}
+    public string Description{ get => _description; set => _description = value; }
 
     public Character(string name,string description){
         _name = name;

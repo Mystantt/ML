@@ -1,17 +1,17 @@
 
 public interface IStats{
 
-    public double getMovementSpeed();
+    public double GetMovementSpeed();
     
-    public double getAttackSpeed();
+    public double GetAttackSpeed();
 
-    public int getPhysicalDamages();
+    public int GetPhysicalDamages();
 
-    public int getSpecialDamages();
+    public int GetSpecialDamages();
 
-    public int getCarryingCapacity();
+    public int GetCarryingCapacity();
 
-    public int getStatusResistance();
+    public int GetStatusResistance();
 
-    public IStats createStats();
+    public IStats CreateStats();
 }

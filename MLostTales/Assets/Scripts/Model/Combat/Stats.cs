@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 /* One of many possible implementation of stats in the game yet to be decided
 * Date : 03/08/2022
@@ -27,31 +28,31 @@ public class Stats : IStats{
         _potential = potential;
     }
 
-    public override double getMovementSpeed(){
+    public double GetMovementSpeed(){
         return _swiftness;
     }
     
-    public override double getAttackSpeed(){
+    public double GetAttackSpeed(){
         return 1 + _swiftness;
     }
 
-    public int getPhysicalDamages(){
-        return will;
+    public int GetPhysicalDamages(){
+        return _will;
     }
 
-    public int getSpecialDamages(){
-        return potential;
+    public int GetSpecialDamages(){
+        return _potential;
     }
 
-    public int getCarryingCapacity(){
-        return 100 + endurance;
+    public int GetCarryingCapacity(){
+        return 100 + _endurance;
     }
 
-    public int getStatusResistance(){
-        return endurance;
+    public int GetStatusResistance(){
+        return _endurance;
     }
 
-    public IStats createStats(){
+    public IStats CreateStats(){
         return new Stats(_swiftness,_endurance,_will,_potential);
     }
 }
